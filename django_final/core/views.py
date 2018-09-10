@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
+from django.views.generic.list import ListView
+from .models  import Owner, Repos
+
+
 
 
 # Create your views here.
 
-def search(request):
-    return None
+class OwnerList(ListView):
+    model = Owner

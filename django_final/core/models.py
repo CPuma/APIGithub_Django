@@ -26,14 +26,15 @@ class Owner(models.Model):
 
 class Repos(models.Model):
     id = models.PositiveIntegerField(primary_key=True)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, verbose_name="Nombre")
     private = models.BooleanField(default=False)
     fork = models.BooleanField(default=False)
-    html_url = models.URLField()
-    description = models.CharField(max_length=200)
-    language = models.CharField(max_length=30)
-    created_at = models.DateTimeField()
-    pushed_at = models.DateTimeField()
+    html_url = models.URLField(verbose_name="Repo_url")
+    description = models.CharField(max_length=200, verbose_name="Descripcion")
+    language = models.CharField(max_length=30, verbose_name="Lenguaje")
+    forks_count = models.SmallIntegerField(default=0, blank=True, verbose_name="Fork")
+    created_at = models.DateTimeField(verbose_name="Fecha de Creacion")
+    pushed_at = models.DateTimeField(verbose_name="Ultimo Commit")
     owner = models.ForeignKey('Owner', on_delete=models.CASCADE)
 
     def __str__(self):

@@ -1,0 +1,136 @@
+<!doctype html>
+    <!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+    <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Open Source Software Projects - Shopify</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="//cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" type="image/x-icon">
+        <link href="main.css" rel="stylesheet" type="text/css">
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+
+    </head>
+
+    <body>
+
+        <div class="hero">
+            <div class="hero-lines"></div>
+                <header class="hero-header">
+                    <div class="pagewidth">
+                        <div class="logo--ie">
+                            <img src="/images/shopify-open-source.svg" alt="Shopify Open Source" class="logo">
+                        </div>
+                        <ul class="inline-list git-stats">
+                            <li>
+                                <span id="countRepos" class="git-stat is-loading"></span> Repos
+                            </li>
+                            <li>
+                                <span id="countMembers" class="git-stat is-loading"></span> Miembros
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+            <div class="pagewidth">
+                <div class="hero-inner">
+                    <h1 class="hero-text">ESTE ES MI  PROYECTO FINAL PARA LA CLASE DE PYTHON DE AREA51 </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagewidth">
+            <div class="filter-bar">
+                <div class="button-group js-radio-button-group" id="filters">
+                    <div class="filter-bar--left">
+                        Show
+                    </div>
+                    <div class="filter-bar--right">
+                        <button class="btn is-active" data-filter="*">All</button>
+                        <button class="btn" data-filter=".go">Go</button>
+                        <button class="btn" data-filter=".javascript">JavaScript</button>
+                        <button class="btn" data-filter=".liquid">Liquid</button>
+                        <button class="btn" data-filter=".swift">Swift</button>
+                        <button class="btn" data-filter=".ruby">Ruby</button>
+                        <button class="btn" data-filter=":not(.go, .css, .javascript, .swift, .ruby, .liquid)">Other</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="repoWrap">
+            <div class="pagewidth">
+                <div id="repos"></div>
+                    <div class="repo-loader">
+                        <div class="repo-loader--inner">
+                            <div class="spinner spinner-large"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script id="repoTemplate" type="text/template">
+                {{#items}}
+                <div class="repo {{languageClass}}{{#unless description}} no-desc{{/unless}}">
+                    <header class="repo-header">
+                        <div class="grid">
+                            <div class="grid-item large--one-half">
+                             d   <h2>
+                                    {{#if homepage}}
+                                        {{#if avatar}}
+                                        <a href="{{homepage}}" class="homepage-link">
+                                            <img src="{{avatar}}" alt="{{name}}">
+                                        </a>
+                                        {{else}}
+                                        <a href="{{homepage}}" class="homepage-link">
+                                            <i class="icon-world"></i>
+                                        </a>
+                                        {{/if}}
+                                        <a href="{{homepage}}" title="View {{name}} on Github">{{name}}</a>
+                                    {{else}}
+                                        {{#if avatar}}
+                                        <img src="{{avatar}}" class="homepage-link" alt="{{name}}">
+                                        {{/if}}
+                                        <a href="{{url}}" title="View {{name}} on Github">{{name}}</a>
+                                    {{/if}}
+                                </h2>
+                            </div>
+                            <div class="grid-item large--one-half">
+                                <div class="repo-meta">
+                                    <div class="repo-git">
+                                        <a href="{{url}}" title="View {{name}} on GitHub">
+                                            <i class="icon-github" title="View on GitHub"></i> Repo
+                                        </a>
+                                    </div>
+                                    <div class="repo-stats">
+                                        <i class="icon-star" title="Stars"></i> {{stars}}
+                                        <i class="icon-forks" title="Forks"></i> {{forks}}
+                                        <span class="repo-lang">{{language}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                {{#if description}}
+                <p>{{description}}</p>
+                {{/if}}
+                </div>
+                {{/items}}
+            </script>
+
+        <footer class="footer pagewidth">
+
+            <div class="grid">
+                <div class="grid-item xlarge--one-third xlarge--text-left">
+                    Mi repo  <a href="http://www.github.com/CPuma">CPuma</a> © 2018
+                </div>
+                <div class="grid-item xlarge--one-third">
+                    <a href="https://twitter.com/Cpuma23" class="twitter-link"><span class="under">Sigame</span> <i class="icon-twitter"></i></a>
+                </div>
+            </div>
+
+        </footer>
+
+    </body>
+</html>
